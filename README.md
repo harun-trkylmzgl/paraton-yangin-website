@@ -39,7 +39,7 @@ paratonyangin/
 1. Clone the repository or download the ZIP file:
 
 ```bash
-git clone https://github.com/yourusername/paratonyangin-website.git
+git clone https://github.com/harun-trkylmzgl/paratonyangin-website.git
 ```
 ## 📄 License
 
