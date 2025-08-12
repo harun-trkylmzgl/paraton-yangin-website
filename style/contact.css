@@ -1,0 +1,428 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+/* ðŸ“Œ Arka Plan */
+.contact-bg {
+  background-image: url('/img/contact-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6); /* GÃ¶lgelendirme ekledik */
+  height:60rem;
+}
+
+
+.contact-bg:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+
+/* ðŸ“Œ Header */
+.header {
+  background: linear-gradient(to right, #000 75%, #3c2f29 90%, #34201B 100%);
+  width: 100%;
+  height: 90px;
+  top: 0;
+  left: 0;
+  padding: 0 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Header'a gÃ¶lge ekledik */
+}
+
+.header .logo {
+  width: 100px;
+  height: 100px;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.nav ul li a {
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.nav ul li a:hover {
+  color: #d92323;
+}
+
+/* ðŸ“Œ BaÅŸlÄ±k */
+.header h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  margin: 0;
+}
+
+.call-button {
+  background-color: #A90000;
+  align-items: center;
+  gap: 5px;
+  border-radius: 10px;
+}
+
+.thanks-container{
+  margin: 0 auto;
+}
+
+/* ðŸ“Œ AÃ§Ä±lÄ±ÅŸ Animasyonu */
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* ðŸ“Œ Thanks Box Animasyonu */
+.thanks-box {
+  background-color: #000;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 5rem auto 2rem auto; /* Header ile arasÄ±nda yeterli boÅŸluk olacak */
+  opacity: 0; /* BaÅŸlangÄ±Ã§ta gÃ¶rÃ¼nmez */
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.3s; /* Gecikme ekleyebilirsiniz */
+}
+
+/* ðŸ“Œ Ä°letiÅŸim Formu Animasyonu */
+.contact-form {
+  display: block;
+  background: #F0F0F0;
+  padding: 4rem;
+  padding-bottom: 0.5rem;
+  border-radius: 10px;
+  width: 35%;
+  text-align: center;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  opacity: 0; /* BaÅŸlangÄ±Ã§ta gÃ¶rÃ¼nmez */
+  animation: fadeInUp 1s ease-out forwards; 
+  animation-delay: 0.6s; /* Gecikme ekleyebilirsiniz */
+}
+
+
+.contact-form label {
+
+  display: none;
+  position: relative;
+  margin: 0px 0;
+  text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  outline: none;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.contact-form button {
+  background: #d92323;
+  color: rgb(0, 0, 0);
+  padding: 12px;
+  border: none;
+  width: 50%;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  transition: 0.3s;
+  margin-top: 20px;
+}
+
+.contact-form button:hover {
+  color: white;
+  background: #000000;
+  transform: scale(1.05);
+}
+
+/* Active durumu */
+.contact-form button:active {
+  background-color: #0000005e;
+  color: white;
+  transform: scale(0.95);
+}
+
+.footer-bottom {
+  color: #969696;
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 0;
+  margin-top: 10px;
+}
+
+
+/* ðŸ“Œ MenÃ¼ Responsive */
+@media (max-width: 768px) {
+
+   #formMessage {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+  /* Header dÃ¼zenlemeleri */
+  .header {
+    flex-direction: column;
+    align-items: center;
+    height: 80px;
+    justify-content: center;
+    position: fixed;
+    
+  }
+
+    
+  .header .logo {
+    width: 80px;
+    height: auto;
+  }
+
+  .header h2 {
+    display: none;
+  }
+
+  .nav {
+    flex-direction: row;
+    gap: 10px;
+    text-align: center;
+    width: 100%;
+    justify-content: start;
+  }
+
+
+  .header .nav ul {
+    display: flex;
+    gap: 2px;
+    margin: 0;
+  }
+
+  .header .nav a {
+    font-size: 12px;
+    padding: 5px;
+  }
+  
+  .call-button {
+    gap: 1px;
+    border-radius: 2px;
+   }
+   
+   .call-button .material-icons {
+     font-size: 18px;
+     margin-top: 1px;
+   }
+   
+  .contact-bg{
+    overflow: hidden;
+    height: 45rem;
+  }
+
+  /* Thanks Box ve Contact Form iÃ§in dÃ¼zenlemeler */
+  .thanks-container {
+    height: auto;
+    width: 100%; /* Container'Ä± biraz daha geniÅŸletiyoruz */
+    margin: 0 auto;
+    padding-top: 1rem; /* Header'a daha yakÄ±n */
+    margin-top: 0;
+    padding: 10px;
+  }
+
+  .thanks-box {
+    font-weight: 100;
+    font-style: inherit;
+    font-variant: initial;
+    font-size: 12px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto; /* OrtalayacaÄŸÄ±z */
+    margin-bottom: 2rem; /* Header'a yakÄ±n olmasÄ± iÃ§in margin-top ekledik */
+  }
+
+  .contact-form {
+    padding: 1rem 2rem;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 12px;
+  }
+
+  .contact-form button {
+    width: 100%;
+    font-size: 14px;
+  }
+  .footer {
+    padding: 10px;
+  }
+  .language-selector {
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    gap: 3px;
+  }
+
+  .lang-btn img {
+    width: 10px;
+    height: 10px;
+  }
+
+
+  .language-selector img{
+    height: 15px;
+    width: 15px;
+  }
+}
+
+/* Temel stil ayarlarÄ± */
+.message {
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 600px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* BaÅŸarÄ± mesajÄ± stili */
+.message.success {
+  background-color: #28a745; /* YeÅŸil */
+  color: white;
+  border: 1px solid #218838;
+}
+
+/* Hata mesajÄ± stili */
+.message.error {
+  background-color: #dc3545; /* KÄ±rmÄ±zÄ± */
+  color: white;
+  border: 1px solid #c82333;
+}
+
+/* Ä°kon stili */
+.message i {
+  margin-right: 10px;
+  font-size: 1.4rem;
+}
+
+/* BaÅŸarÄ± mesajÄ± ikonu iÃ§in yeÅŸil tik */
+.message.success i {
+  color: #28a745;
+}
+
+/* Hata mesajÄ± ikonu iÃ§in kÄ±rmÄ±zÄ± Ã§arpÄ± */
+.message.error i {
+  color: #dc3545;
+}
+
+@media (max-width: 1024px) {
+
+.footer-left p{
+  font-size: 10px;
+}  
+.footer-logo{
+  display: none;}
+}
+
+#formMessage {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* İkon ile metin arasındaki boşluk */
+    padding: 15px;
+    border-radius: 10px; /* Yuvarlak köşeler */
+    font-size: 16px;
+    font-weight: bold;
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: left;
+    justify-content: start;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+}
+
+#formMessage.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+#formMessage.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+#formIcon {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.success #formIcon {
+    background-color: #28a745; /* Yeşil arka plan */
+    color: white;
+}
+
+.error #formIcon {
+    background-color: #dc3545; /* Kırmızı arka plan */
+    color: white;
+}

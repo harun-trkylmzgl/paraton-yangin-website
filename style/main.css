@@ -1,0 +1,980 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+      opacity: 0;
+      transform: translateX(-50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+      opacity: 0;
+      transform: scale(0.8);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+/* Header açılış efekti */
+.header {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Banner açılış efekti */
+.banner-content h1 {
+  animation: slideIn 1s ease-in-out;
+}
+
+/* Ürün kartlarının açılış efekti */
+.product-item {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+/* Butonlar için hover efekti */
+.detay-btn {
+  transition: all 0.3s ease-in-out;
+}
+
+.detay-btn:hover {
+  transform: scale(1.05);
+}
+
+
+body {
+  overflow-x: hidden; /* Yatay kaydırma engelleniyor */
+  background-color: white;
+  color: #EAEAEA;
+  height: max-content;
+  font-size: 2vw; /* Dinamik font boyutu */
+  width: 100%;
+}
+
+.header {
+  overflow: hidden;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  cursor: default;
+}
+
+/* Menü öğeleri için Hover ve Active Efektleri */
+.header .nav ul li {
+  position: relative;
+  list-style: none;
+}
+
+.header, .nav {
+  display: flex;
+  flex-wrap: wrap; /* Elemanların taşmasını engellemek için */
+}
+
+
+.header .nav a {
+
+  color: #EAEAEA;
+  text-decoration: none;
+  font-size: 1.3rem;
+  display: flex;
+  padding: 5px 12px;
+  transition: all 0.3s ease;
+}
+
+.header .nav a:hover {
+  color: #c5313e;
+  border-radius: 10px;
+}
+
+.header .nav a:active {
+  color: #e63946;
+  transform: scale(0.95);
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+  cursor: pointer;
+}
+
+.nav {
+  margin: 0px;
+  flex-grow: 1;
+  display: flex;
+  justify-content:start;
+  align-items: center;
+}
+
+.nav ul {
+  font-family: 'Poppins ';
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav ul li a {
+  color: #EAEAEA;
+  text-decoration: none;
+  font-weight: normal;
+  font-family: 'Poppins ';
+}
+
+.teklif-btn {
+  color: #EAEAEA;
+  font-family: 'Poppins ';
+  font-weight: 600;
+  font-size: 1rem;
+  margin-right: auto;
+  padding: 7px 45px;
+  background-color: #A90000;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+/* Hover efekti */
+.teklif-btn:hover {
+  background-color: #000000;
+  transform: scale(1.1);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Active (tıklanınca) efekti */
+.teklif-btn:active {
+  background-color: #ff69697e;
+  transform: scale(0.95);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.special-product-btn {
+  display: none;
+  color: #000000;
+  font-family: 'Poppins ';
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-right: auto;
+  padding: 10px 45px;
+  background-color: #EAEAEA;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+/* Hover efekti */
+.special-product-btn:hover {
+  color: #EAEAEA;
+  background-color: #A90000;
+  transform: scale(1.1);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Active (tıklanınca) efekti */
+.special-product-btn:active {
+  background-color: #ff69697e;
+  transform: scale(0.95);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.call-button {
+  font-family: 'Poppins ';
+  background-color: #A90000;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-radius: 5px;
+}
+
+.call-button span{
+  font-size: 16px;
+  color: #fff6f6;
+}
+.call-button:hover {
+  background-color: #000000;
+  transform: scale(1.05);
+}
+.call-button:active {
+  background-color: #fff6f6;
+}
+.call-button .material-icons {
+  font-size: 24px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.call-button:hover .material-icons {
+  transform: scale(1.2);
+  opacity: 1;
+}
+.call-button span {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+  
+}
+.call-button:hover span {
+  opacity: 1;
+}
+
+/* 📌 Dil Seçici */
+.language-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  position: fixed;
+  right: 8px;
+  top: 5px;
+  z-index: 100000;
+}
+
+
+.lang-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.lang-btn img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.lang-btn img:hover {
+  transform: scale(1.1);
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 45vh;
+  overflow: hidden;
+}
+
+.banner-video {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+  background-color: black;
+  cursor: default;
+  height: 48rem;;
+  pointer-events: none; /* Video tıklanamaz hale gelir */
+  max-width: 100%; /* Ekran genişliğini aşmaması için */
+  max-height: 100%; /* Ekran yüksekliğini aşmaması için */
+}
+
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 28%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.banner-content h1 {
+  font-size: 1.6rem;
+  font-family: 'Poppins ';
+  color: #FF0000;
+}
+
+.banner-content-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 55%;
+  left: 87%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+}
+
+
+/* Ana banner butonu için Hover ve Active Efektleri */
+.banner-content-btn .detay-btn {
+  white-space: nowrap; /* Metnin alt satıra geçmesini önler */
+  font-weight: 700;
+  font-family: 'Poppins';
+  padding: 10px 24px;
+  font-size: 16px;
+  background-color: #A90000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover durumu */
+.banner-content-btn .detay-btn:hover {
+  background-color: #000000;
+  transform: scale(1.1);
+  color: #ffffff;
+}
+
+/* Active durumu */
+.banner-content-btn .detay-btn:active {
+  background-color: #0000005e;
+  color: white;
+  transform: scale(0.95);
+}
+
+.detay-btn {
+  padding: 10px 30px;
+  background-color: #A90000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 9px;
+}
+
+.detay-btn:hover {
+  background-color: darkred;
+}
+
+.product-banner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+/* Arka plan fotoğrafı */
+.products {
+  margin:  auto;
+  padding: 40px 0px;
+  background: url('/img/product-banner.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+  color: #fff;
+}
+
+/* Ürün grid düzeni */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 60px;
+  max-width: 1200px;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.product-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid #000000;
+  padding: 0;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 8px rgba(1, 1, 1, 1.8);
+  position: relative;
+  overflow: hidden;
+  height: 350px;
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+}
+
+.product-item img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgb(0, 0, 0);
+  transition: transform 0.3s ease, filter 0.3s ease;
+  transform-origin: center center;
+  will-change: transform; 
+}
+
+.product-item img{
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 105));
+}
+
+/* Resmin üzerine gelindiğinde efekt */
+.product-item img:hover {
+
+  transform: scale(1.1);
+  object-position: center;
+}
+
+.product-item h3 a{
+  background: #000000;
+  z-index: 3;
+  color: #EAEAEA;  /* Ürün ismini beyaz yap */
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  position: relative;  /* absolute yerine relative kullan */
+  display: block; /* Linkin görünmesini sağla */
+  text-align: center; /* Ortala */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Daha düzgün bir gölge */
+  letter-spacing: 1px;
+  padding: 15px 0;
+  text-decoration: none !important; /* Alt çizgiyi kesin kaldır */
+  border: none;
+}
+
+
+
+.product-btn {
+  font-size: 1rem;
+  white-space: nowrap;  /* Yazının alt alta geçmesini engeller */
+  text-decoration: none;  /* Butonlardaki alt çizgiyi kaldırıyoruz */
+  font-weight: 500;
+  font-family: 'Roboto';
+  padding: 10px 20px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 1.8);
+}
+
+.product-btn:hover {
+  background-color: #ffffffc7;
+  color: black;
+}
+
+.email-strip {
+  background-color: black; /* Siyah arka plan */
+  text-align: center; /* Ortaya hizalama */
+  padding: 8px 0; /* Yükseklik ayarı */
+  font-size: 16px; /* Yazı boyutu */
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+
+.email-strip a {
+  color: #969696; /* Linkin rengini beyaz yap */
+  text-decoration: none; /* Başta alt çizgi olmasın */
+  position: relative; /* Çizgiyi konumlandırmak için */
+  display: inline-block;
+}
+
+.email-strip a::after {
+  content: ""; /* Çizgi oluştur */
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* Yazının biraz altına koy */
+  width: 0%; /* Başlangıçta çizgi yok */
+  height: 2px; /* Çizginin kalınlığı */
+  background-color: #EAEAEA; /* Çizgi rengi */
+  transition: width 0.4s ease-in-out; /* Yavaşça genişle */
+}
+
+.email-strip a:hover::after {
+  width: 100%; /* Üzerine gelince tamamen görünsün */
+}
+
+.adv {
+  margin-left: 10rem;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  background-color: #A90000;
+  width: 100vw; /* width: 100% yerine 100vw kullanarak tam genişliği alabilirsiniz */
+  height: 10rem;
+  margin: 0; /* Margin değerini sıfırlıyoruz */
+  font-family: 'Oswald';
+  font-size: 36px;
+  box-sizing: border-box; /* Box modelin doğru çalışması için */
+}
+
+.adv h2 {
+  margin-left: 10rem;
+  margin-bottom: 7px;
+}
+
+.adv-contact {
+  margin-bottom: 8px;
+  margin-right: 10rem;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border-radius: 15px;
+  display: inline-block;
+}
+
+/* Butonun üzerine gelindiğinde */
+.adv-contact:hover {
+  background: white;
+  color: #d62828;
+  transform: scale(1.1);
+}
+
+/* Butona tıklandığında */
+.adv-contact:active {
+  background: #d62828;
+  color: white;
+  border-color: #d62828;
+  transform: scale(0.95);
+}
+
+/* Footer Genel Tasarım */
+.footer {
+  white-space: nowrap;
+  position: relative;
+  background: #111;
+  font-family: 'Roboto', sans-serif;
+  padding: 0px 132px;
+}
+
+/* Footer İç Konteyner */
+.footer-container {
+  color: #969696;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Logo Stili */
+.footer-logo {
+  position: absolute;
+  width: 120px;
+  margin-bottom: 0px;
+  top: 0px;
+  left: 10px;
+}
+
+/* Sol Kısım */
+.footer-left {
+  text-align: left;
+  max-width: 300px;
+  padding: 5px;
+  margin-bottom: 3px;
+  white-space: normal;
+}
+
+.footer-left p, .footer-left h2 {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+/* Menü Stili */
+
+  .footer-menu{
+    margin-right: 280px;
+  }
+
+.footer-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 30px;
+}
+
+.footer-menu ul li a {
+  color: #969696;
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Hover Efekti: Alt Çizgi Yavaşça Belirir */
+.footer-menu ul li a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #EAEAEA;
+  transition: width 0.4s ease-in-out;
+}
+
+.footer-menu ul li a:hover::after {
+  width: 100%;
+}
+
+.footer-menu ul li a:hover {
+  color: #EAEAEA;
+}
+
+/* Sosyal Medya İkonları */
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a {
+  color: #969696;
+  font-size: 24px;
+  transition: transform 0.3s ease-in-out, color 0.3s;
+}
+
+/* Instagram için hover rengi */
+.footer-social a[href*="instagram"]:hover {
+  color: #E4405F; /* Instagram rengi */
+}
+
+/* LinkedIn için hover rengi */
+.footer-social a[href*="linkedin"]:hover {
+  color: #0077B5; /* LinkedIn rengi */
+}
+/* Tel ve Mail Linkleri */
+.phone-link{
+  color: #969696;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.phone-link:hover{
+  color: #EAEAEA;
+}
+
+/* Footer Alt Kısım */
+.footer-bottom {
+  color: #969696;
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 7px 0;
+}
+
+
+
+/* 📌 Responsive Tasarım */
+@media (max-width: 768px) {
+  .email-strip a{
+    font-size: 14px;
+  }
+  .footer-container {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .footer{
+    padding: 0 5px;
+  }
+
+  .footer-left {
+      text-align: center;
+  }
+
+  .footer-left p{
+    font-size: 10px;
+  }
+
+  .footer-menu{
+    margin: 0;
+    justify-content: center;
+    align-items: center;  
+  }
+
+  .footer-menu ul {
+      flex-direction: row;
+      gap: 10px;
+  }
+
+  .footer-menu ul li a{
+    display: inline-block;
+    font-size: 14px;
+    padding: 1px;
+  }
+  .footer-social {
+      justify-content: center;
+      margin-top: 15px;
+  }
+  .footer-logo{
+   display: none;}
+}
+
+
+
+/* Beyaz alt çizgi ekleme */
+.nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+/* Hover efekti */
+.nav ul li a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Hover'da renk değiştirme (opsiyonel) */
+.nav ul li a:hover {
+  color: #fff;
+}
+
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  z-index: 10000;
+}
+
+.whatsapp-button img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Hover efekti: Hafif büyüme ve parlama */
+.whatsapp-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Butona tıklanınca küçülme efekti */
+.whatsapp-button:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 1024px) {
+
+.product-grid{
+width: 90%;
+}
+.product-item h3 a{
+  font-size: 0.8rem;
+}
+}
+
+/* 📌 Menü Responsive */
+@media (max-width: 768px) {
+  /* Header düzenlemeleri */
+  .header {
+    background-color: rgba(0, 0, 0, 0.501);
+    position: fixed;
+    top: 0;
+    flex-direction: row;
+    padding: 0px;
+    z-index: 100;
+    width: 100%;
+  }
+
+  .header .logo {
+    width: 54px;
+    height: 60px;
+  }
+
+  .nav {
+    margin: 0 auto;
+    flex-direction: row;
+    gap: 5px;
+    width: auto;
+    }
+
+  .call-button {
+ gap: 1px;
+ border-radius: 2px;
+}
+
+.call-button .material-icons {
+  font-size: 13px;
+}
+
+.call-button span{
+  font-size: 9px;
+  color: #fff6f6;
+}
+
+  .header .nav a {
+    font-size: 9px;
+    padding: 3px;
+  }
+
+  .nav ul{
+    gap: 5px;
+  }
+
+  .language-selector {
+    right: 0px;
+    top: 5px;
+    gap: 3px;
+  }
+  .language-selector img{
+    height: 14px;
+    width: 14px;
+  }
+
+  .teklif-btn {
+    font-size: 9px;
+    padding: 2px 7px;
+    border-radius: 2px;
+    font-weight: 400;
+  }
+
+  .special-product-btn{
+    font-size: 8px;
+    padding: 2px 7px;
+    border-radius: 2px;
+  }
+
+  .banner {
+    white-space: nowrap;
+    width: 100%;
+    height: 40vh; /* Daha uygun yükseklik */
+    overflow: hidden;
+  }
+
+  .banner-video {
+    position: relative;
+    width:  100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: black;
+    
+  }
+
+  .banner-content{
+    top: 50%;
+    left: 50%;
+  }
+
+  .banner-content h1 {
+    background-color: rgba(0, 0, 0, 0.107); /* Hafif transparan koyu arka plan */
+    line-height: 100%;
+    font-size: 0.8rem; /* Mobil için küçültüldü */
+    margin-left: auto;
+  }
+
+  .banner-content-btn {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .banner .detay-btn{
+    display: none;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 sütun düzeni */
+    gap: 10px;
+  }
+
+  .product-item {
+    height: auto;
+    width: 100%;
+    max-width: 250px; /* Ürün boyutunu küçültme */
+    margin: 0 auto;
+  }
+
+  .product-item img {
+    height: 150px; /* Ürün görsel boyutunu küçültme */
+    object-fit: cover;
+  }
+
+  .product-item h3 a {
+    font-size: 0.5rem; /* Başlık boyutunu küçültme */
+  }
+
+  .product-btn {
+    white-space: nowrap; /* Metnin alt satıra geçmesini önler */
+    font-size: 0.7rem;
+    padding: 5px; /* Buton boyutunu küçültme */
+    bottom: 15px;
+  }
+
+  .adv {
+    height: 7rem;
+    position: relative;
+    margin-bottom: auto;
+    font-size: 14px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .adv h2{
+    margin: 0;
+  }
+
+  .adv-contact {
+    margin: 15px auto;
+    width: 100%;
+    font-size: 12px;
+    padding: 0.5rem 1rem;
+    height: auto;
+    text-align: center;
+    
+  }
+
+  .whatsapp-button img {
+    width: 30px;
+    height: 30px;
+  }
+  .whatsapp-button {
+    width: 40px;
+    height: 40px;
+    }
+}
+
+@media (min-width: 768px){
+
+  .product-item h3 a {
+    font-size: 0.8rem;
+}
+.product-item img {
+  height: 250px;
+}
+.product-btn {
+  font-size: 0.8rem;
+  padding: 12px;
+  bottom: 20px;
+}
+}
